@@ -1,0 +1,59 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+- gem install asciidoctor -v 1.5.2 
+- gem install tilt
+- sudo pip install git+https://github.com/rdhyee/ebooklib.git
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+- asciidoctor -a toc,idprefix=xx_,version=$VERSION -b xhtml5 -T ./asciidoctor-htmlbook/htmlbook-autogen/
+  -d book book.asciidoc -o book.html
+- git clone https://github.com/gitenberg-dev/HTMLBook
+
+# make book.html available to jinja2 environment by putting it into templates
+- cp book.html asciidoctor-htmlbook/gitberg-machine/templates/
+
+- /usr/bin/python asciidoctor-htmlbook/gitberg-machine/machine.py -o . -m metadata.yaml book.html
+- xsltproc -stringparam external.assets.list " " ./HTMLBook/htmlbook-xsl/epub.xsl book.html
+- cp ./HTMLBook/stylesheets/epub/epub.css OEBPS
+- if [ -e cover.jpg ]; then cp cover.jpg OEBPS/cover.jpg; fi
+# look for first images directory and one found, copy over to ./OEBPS
+- find . -name images -type d | head -n 1 | xargs -I {} mv {} ./OEBPS/
+- zip -rX book.epub mimetype
+- zip -rX book.epub OEBPS/ META-INF/
+- if test -d "OEBPS/images/"; then zip -rX book.epub OEBPS/images/ ;fi
+- mv book.epub Tess-of-the-dUrbervilles-A-Pure-Woman.epub
+- ebook-convert Tess-of-the-dUrbervilles-A-Pure-Woman.epub Tess-of-the-dUrbervilles-A-Pure-Woman.mobi
+- xvfb-run ebook-convert Tess-of-the-dUrbervilles-A-Pure-Woman.epub Tess-of-the-dUrbervilles-A-Pure-Woman.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: mcXvWP9aKDVXls3aCRrVeO8/ogpIUImL7QXZMUBs/q7ILvgmKQPDIhwuiJz8J8Ni07j+WBki+8qW1P5ECqZ2MUASjurdt3CmUQAR+m6ZiwH8vSA4R5GcyyRhJz6LKGQ3IMUcHUddeoL38TBi4uLAmbTmQAZvLOn/6nnKlutR19ItjhQiK6wUiZMNE3KsbI3eDje35gE5O7Uj3gTtmhNHgZLn0rt9jSIoD10tq5/hTzwfyI7JObfRtXjHp0p9gLUhTrTFg2fRbQEZlvnTe/4/nCE4j7jbrZeJm9t4jSZEwgZYQKTryP+29r2RPlDWSVu1k0QXXQVvksDKTOCdD26SJRsBFhYIhf+RLqwfesdPo/rqLVLmXzpIlL6b1uK76yxWoJIpusClaO26wpMBWpNxXFPZxKO2rNIm6eQdhaF2ckCUS2tZlU/QMjBRB0tCl1Qfm0jDER89ZnwgVlzMfhJOkiqGRijkYM0SxsicxZEsjEpDDz0QDrd5C+UtdFSPsRO6UeVi6O52EuuSn+uQ2bh9nVw6g/XZqmyD4Ywj/w4aF/wCr5C5XwYIC/AXfVKVS4QTMElzBdYvuHf06AGRsQYwRfJBwiPSRu2fxn81o/f2xjE030wuYeaRRHrH1YN3eMQTBKNfcgv3kGVNrXmvV0cZL5aU/Qj+Ap3CK9+mNtmAn8I=
+  file:
+    - Tess-of-the-dUrbervilles-A-Pure-Woman.epub
+    - Tess-of-the-dUrbervilles-A-Pure-Woman.mobi
+    - Tess-of-the-dUrbervilles-A-Pure-Woman.pdf
+  "on":
+    repo: GITenberg/Tess-of-the-d-Urbervilles-A-Pure-Woman_110
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
