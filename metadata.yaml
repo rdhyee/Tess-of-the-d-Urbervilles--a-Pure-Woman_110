@@ -1,0 +1,66 @@
+_repo: Tess-of-the-d-Urbervilles-A-Pure-Woman_110
+_version: 0.0.1
+creator:
+  author:
+    agent_name: Hardy, Thomas
+    birthdate: 1840
+    deathdate: 1928
+    gutenberg_agent_id: '23'
+    url: http://www.gutenberg.org/2009/agents/23
+    wikipedia: http://en.wikipedia.org/wiki/Thomas_Hardy
+description: "Tess of the d'Urbervilles: A Pure Woman Faithfully Presented is a novel\
+  \ by Thomas Hardy. It initially appeared in a censored and serialised version, published\
+  \ by the British illustrated newspaper The Graphic in 1891 and in book form in 1892.\
+  \ Though now considered a major nineteenth-century English novel and possibly Hardy's\
+  \ fictional masterpiece, Tess of the d'Urbervilles received mixed reviews when it\
+  \ first appeared, in part because it challenged the sexual morals of late Victorian\
+  \ England.\n From Wikipedia (CC BY-SA)."
+gutenberg_bookshelf: Banned Books from Anne Haight's list
+gutenberg_issued: '1994-02-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '110'
+  wikidata: Q649409
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Rape victims -- Fiction'
+- !lcsh 'Triangles (Interpersonal relations) -- Fiction'
+- !lcsh 'Children of the rich -- Fiction'
+- !lcc 'PR'
+- !lcsh 'Poor families -- Fiction'
+- !lcsh 'Pastoral fiction'
+- !lcsh 'Man-woman relationships -- Fiction'
+- !lcsh 'Wessex (England) -- Fiction'
+- !lcsh 'Children of clergy -- Fiction'
+- !lcsh 'Women household employees -- Fiction'
+- !lcsh 'Women murderers -- Fiction'
+- !lcsh 'Didactic fiction'
+- GITenberg
+title: 'Tess of the d''Urbervilles: A Pure Woman'
+url: http://www.gutenberg.org/ebooks/110
+wikipedia:
+- https://pa.wikipedia.org/wiki/%E0%A8%9F%E0%A9%88%E0%A9%B1%E0%A8%B8
+- https://fa.wikipedia.org/wiki/%D8%AA%D8%B3_(%D8%B1%D9%85%D8%A7%D9%86)
+- https://vi.wikipedia.org/wiki/Tess_of_the_d%27Urbervilles
+- https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%BC%E3%83%90%E3%83%B4%E3%82%A3%E3%83%AB%E5%AE%B6%E3%81%AE%E3%83%86%E3%82%B9
+- https://es.wikipedia.org/wiki/Tess,_la_de_los_d%27Urberville
+- https://bg.wikipedia.org/wiki/%D0%A2%D0%B5%D1%81_%D0%BE%D1%82_%D1%80%D0%BE%D0%B4%D0%B0_%D0%B4%27%D0%AA%D1%80%D0%B1%D1%8A%D1%80%D0%B2%D0%B8%D0%BB
+- https://ru.wikipedia.org/wiki/%D0%A2%D1%8D%D1%81%D1%81_%D0%B8%D0%B7_%D1%80%D0%BE%D0%B4%D0%B0_%D0%B4%E2%80%99%D0%AD%D1%80%D0%B1%D0%B5%D1%80%D0%B2%D0%B8%D0%BB%D0%BB%D0%B5%D0%B9
+- https://ko.wikipedia.org/wiki/%EB%8D%94%EB%B2%84%EB%B9%8C%EA%B0%80%EC%9D%98_%ED%85%8C%EC%8A%A4
+- https://fr.wikipedia.org/wiki/Tess_d%27Urberville
+- https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BC%AF%E5%AE%B6%E7%9A%84%E8%8B%94%E4%B8%9D
+- https://en.wikipedia.org/wiki/Tess_of_the_d%27Urbervilles
+- https://pl.wikipedia.org/wiki/Tessa_d%E2%80%99Urberville
+- https://fy.wikipedia.org/wiki/Tess_fan_de_D%27Urbervilles
+- https://sv.wikipedia.org/wiki/Tess_av_d%27Urberville
+- https://ar.wikipedia.org/wiki/%D8%AA%D9%8A%D8%B3_%D8%A3%D9%88%DA%A4_%D8%B0%D9%8A_%D8%AF%D9%8A%D8%B1%D8%A8%D9%8A%D8%B1%DA%A4%D9%84%D8%B2
+- https://nl.wikipedia.org/wiki/Tess_of_the_d%27Urbervilles
+- https://de.wikipedia.org/wiki/Tess_von_den_d%E2%80%99Urbervilles
+- https://cy.wikipedia.org/wiki/Tess_of_the_d%27Urbervilles
+- https://hy.wikipedia.org/wiki/%D5%8F%D5%A5%D5%BD%D5%BD%D5%A8_%D4%B4%D5%A7%D6%80%D5%A2%D5%A5%D6%80%D5%BE%D5%AB%D5%AC%D5%B6%D5%A5%D6%80%D5%AB_%D5%BF%D5%B8%D5%B0%D5%B4%D5%AB%D6%81
+- https://it.wikipedia.org/wiki/Tess_dei_d%27Urbervilles
+- https://no.wikipedia.org/wiki/Tess_av_slekten_D%27Urberville
+- https://he.wikipedia.org/wiki/%D7%98%D7%A1_%D7%9C%D7%91%D7%99%D7%AA_%D7%93%D7%A8%D7%91%D7%A8%D7%95%D7%95%D7%99%D7%9C
