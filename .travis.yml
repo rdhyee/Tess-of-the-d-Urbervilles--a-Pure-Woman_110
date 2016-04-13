@@ -50,7 +50,7 @@ deploy:
     - Tess-of-the-dUrbervilles-A-Pure-Woman.mobi
     - Tess-of-the-dUrbervilles-A-Pure-Woman.pdf
   "on":
-    repo: GITenberg/Tess-of-the-d-Urbervilles-A-Pure-Woman_110
+    repo: GITenberg/Tess-of-the-d-Urbervilles--a-Pure-Woman_110
 addons:
   apt:
     packages:
